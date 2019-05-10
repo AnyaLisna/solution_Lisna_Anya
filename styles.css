@@ -25,6 +25,7 @@ img {
   width: 200px;
   height: 200px;
   border-radius: 50%;
+  margin-top: 10px;
 }
 
 .rank {
@@ -46,24 +47,31 @@ img {
 
 .extra {
   visibility: hidden;
+  font-size: 18px;
+  color: black;
+  margin-top: 9px;
+  font-weight: normal;
 }
 
-@media screen and (max-width: 750px) {
-  .people:nth-child(3) {
-    grid-column-start: 2;
+@media (max-width: 750px) {
+  .people {
+    grid-template-columns: repeat(2, 200px);
   }
 }
 .person:hover {
   background: #EEEEEE;
   border-radius: 10px;
-  width: 220;
   height: 287px;
+  width: 220px;
+  transform: scale(1.2);
 }
 .person:hover .extra {
   visibility: visible;
-  color: black;
-  margin-top: 9px;
-  font-weight: normal;
 }
+.person:hover img {
+  border-radius: 60px;
+}
+
+@keyframes hover {}
 
 /*# sourceMappingURL=styles.css.map */
