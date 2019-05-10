@@ -1,0 +1,70 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    box-sizing: border-box;
+    color: #2F4F4F;
+}
+
+@mixin circle($size) {
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+}
+
+.people {
+    display: grid;
+    grid-gap: 30px;
+    justify-content: center;
+    grid-template-columns: repeat(4, 200px);
+    margin-top: 30px;
+}
+
+.person {
+    position: relative;
+}
+
+img {
+    @include circle(200px); 
+}
+
+.rank {
+    @include circle(32px); 
+    background: white;
+    position: absolute;
+    top: 84px;
+    right: 10px;
+    line-height: 32px;
+    color: #8B0000;
+    font-size: 16px;
+}
+
+.name {
+    height: 23px;
+}
+.extra {
+    visibility: hidden;
+}
+
+
+@media screen and (max-width: 750px) {
+    .people:nth-child(3){
+        grid-column-start: 2;
+    }
+}
+
+.person:hover {
+    background: #EEEEEE;
+    border-radius: 10px;
+    width: 220;
+    height: 287px;
+    .extra {
+        visibility: visible;
+        color: black;
+        margin-top: 9px;
+        font-weight: normal;
+    }
+}
